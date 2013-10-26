@@ -16,7 +16,7 @@ public class ConnectionFactory {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			throw new RuntimeException(e);
-		}
+		} 
 		
 		
 	}
