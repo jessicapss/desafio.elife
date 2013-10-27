@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.elife.jdbc.dao.UserDao;
 import br.com.elife.jdbc.model.User;
 
-//FIXME
 @WebServlet("/editUser")
 public class EditUserServlet extends HttpServlet {
 

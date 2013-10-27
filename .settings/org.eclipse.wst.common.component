@@ -3,7 +3,7 @@
     <wb-module deploy-name="DesafioElife">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="DesafioElife"/>
         <property name="java-output-path" value="/DesafioElife/build/classes"/>
+        <property name="context-root" value="desafioelife"/>
     </wb-module>
 </project-modules>

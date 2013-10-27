@@ -18,7 +18,8 @@ public class TestaDeleta {
 		 
 		 UserDao dao = new UserDao();
 		 
-		 dao.deleta(user);
+		 dao.deleta(27L);
+		 
 		 
 		 System.out.println("Gravado!");
 	}

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.elife.jdbc.dao.UserDao;
 import br.com.elife.jdbc.model.User;
 
-@WebServlet(name="addUser", urlPatterns={"/addUser"})
+@WebServlet("/addUser")
 public class AdicionaUserServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 3772892623649126079L;
@@ -32,7 +32,7 @@ public class AdicionaUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String pais = request.getParameter("pais");
         String dataEmTexto = request
-                .getParameter("data_nascimento");
+                .getParameter("dataNascimento");
         Calendar dataNascimento = null;
         
 
@@ -57,18 +57,11 @@ public class AdicionaUserServlet extends HttpServlet {
         
         UserDao dao = new UserDao();
         dao.adiciona(user);
-        
-        //TODO
-//        request.setAttribute("msg", "Gravado com sucesso!");  
-//        request.getRequestDispatcher("index.jsp").forward(request, response); 
-//        
-//        out.println("<html>");
-//        out.println("<body>");
-//        out.println("Contato " + user.getNome() +
-//                " adicionado com sucesso");
-//        out.println("</body>");
-//        out.println("</html>");
 
+	}
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
 	}
 	
 

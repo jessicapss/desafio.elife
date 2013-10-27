@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<meta charset="UTF-8">
+            <meta charset="UTF-8">
         <title>CRUD User</title>
         <link href="media/dataTables/demo_page.css" rel="stylesheet" type="text/css" />
         <link href="media/dataTables/demo_table.css" rel="stylesheet" type="text/css" />
@@ -26,10 +26,10 @@
                 "bProcessing": true,
                 "sPaginationType": "full_numbers",
                 "bJQueryUI": true,
+                "bSort": false,
                 "aoColumns": [
-                              {  "sName": "id",
+                              { "sName": "id",
                                  "bSearchable": false,
-                                 "bSortable": false,
                                  "bVisible": false
                                      },
                       { "sName": "nome" },
@@ -39,23 +39,24 @@
                       { "sName": "email" }
                      ]
             }).makeEditable({
-            	 "sDeleteHttpMethod": "GET",
+                 "sDeleteHttpMethod": "GET",
                  "sDeleteURL": "/desafioelife/deleteUser",
                  "sDeleteRowButtonId": "btnDelUser",
                  "sUpdateURL": "/desafioelife/editUser",
+                 "sAddURL": "/desafioelife/addUser",
 
                 "aoColumns": [
-                    { cssclass: "required" },
                     { cssclass: "required" },
-                    { 
-                    	indicator: 'Salvando...',
+                    { cssclass: "required" },
+                    { 
+                        indicator: 'Salvando...',
                         tooltip: 'Clique para selecionar país',
                         loadtext: 'carregando...',
                         type: 'select',
                         onblur: 'submit',
-                        data: "{'Argentina':'Argentina','Brasil':'Brasil','Espanha':'Espanha', 'Holanda':'Holanda','Inglaterra':'Inglaterra','Jamaica':'Jamaica','Noruega':'Noruega','Portugal':'Portugal', 'Turquia':'Turquia'}"	
+                        data: "{'Argentina':'Argentina','Brasil':'Brasil','Espanha':'Espanha', 'Holanda':'Holanda','Inglaterra':'Inglaterra','Jamaica':'Jamaica','Noruega':'Noruega','Portugal':'Portugal', 'Turquia':'Turquia'}"        
                     },
-                    { cssclass: "required" }, 
+                    { cssclass: "required" },
                     { cssclass: "required" }
                   ]
                 })
@@ -66,12 +67,12 @@
     <body id="dt_example">
         <div id="container">
             <div id="demo_jui">
-            <button id="btAddUser" value="Ok">Add</button> 
-    		<button id="btnDelUser" value="cancel">Delete</button>
+            <button id="btnAddNewRow" value="Ok">Add</button>
+            <button id="btnDelUser" value="cancel">Delete</button>
         <table id="users" class="display">
               <thead>
                   <tr>
-                  		<th>ID</th>
+                                  <th>ID</th>
                         <th>Nome</th>
                         <th>Endereço</th>
                         <th>País</th>
@@ -83,8 +84,34 @@
               </tbody>
         </table>
         </div>
-        </div>
         
+        
+        <form id="formAddNewRow" action="#" title="Add new company">
+			    <input type="hidden" id="id" name="id" value="-1" rel="0" />
+			    <label for="name">Nome</label><input type="text" name="nome" id="nome" class="required" rel="1" />
+			    <br />
+			    <label for="name">Endereço</label><input type="text" name="endereco" id="endereco" rel="2" class="required" />
+			    <br />
+			    <label for="name">País</label><select  name="pais" id="pais" class="required" rel="3">
+			    									<option value="Argentina">Argentina</option>
+			    									<option value="Brasil">Brasil</option>
+			    									<option value="Espanha">Espanha</option>
+			    									<option value="Holanda">Holanda</option>
+			    									<option value="Inglaterra">Inglaterra</option>
+			    									<option value="Jamaica">Jamaica</option>
+			    									<option value="Noruega">Noruega</option>
+			    									<option value="Portugal">Portugal</option>
+			    									<option value="Turquia">Turquia</option>
+			    							</select>
+			    <br />
+			    <label for="name">Nascimento</label><input placeholder="dd/MM/yyyy" type="text" name="dataNascimento" id="dataNascimento"  class="required" rel="4"/>
+			    <br />
+			    <label for="name">Email</label><input type="text" name="email" id="email" class="required" rel="5"/>
+			    <br/>
+			                                          
+			    <br /><br />         
+			</form>
+        </div>
         
     </body>
 </html>
