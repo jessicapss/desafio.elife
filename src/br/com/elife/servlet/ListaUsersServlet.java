@@ -22,7 +22,7 @@ import com.google.gson.JsonIOException;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 
-@WebServlet(name="listaUsers", urlPatterns={"/listaUsers"})
+@WebServlet("/listaUsers")
 public class ListaUsersServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = -1638694086640232072L;
@@ -66,14 +66,21 @@ public class ListaUsersServlet extends HttpServlet {
 	        public int compare(User u1, User u2) {    
 	            switch(sortColumnIndex){
 	            case 0:
-	                return u1.getNome().compareTo(u2.getNome()) * sortDirection;
+	            	return 0;
 	            case 1:
-	                return u1.getEndereco().compareTo(u2.getEndereco()) * sortDirection;
+	            	System.out.println("nome");
+	                return u1.getNome().compareTo(u2.getNome()) * sortDirection;
 	            case 2:
-	                return u1.getPais().compareTo(u2.getPais()) * sortDirection;
+	            	System.out.println("ENDERECO");
+	                return u1.getEndereco().compareTo(u2.getEndereco()) * sortDirection;
 	            case 3:
-	            	return u1.getDataNascimento().compareTo(u2.getDataNascimento()) * sortDirection;
+	            	System.out.println("pais");
+	                return u1.getPais().compareTo(u2.getPais()) * sortDirection;
 	            case 4:
+	            	System.out.println("data");
+	            	return u1.getDataNascimento().compareTo(u2.getDataNascimento()) * sortDirection;
+	            case 5:
+	            	System.out.println("email");
 	            	return u1.getEmail().compareTo(u2.getEmail()) * sortDirection;
 	            }
 	            return 0;
@@ -89,6 +96,7 @@ public class ListaUsersServlet extends HttpServlet {
 		        
 			for(User u : users){
 				JsonArray row = new JsonArray();
+				row.add(new JsonPrimitive(u.getId()));
 				row.add(new JsonPrimitive(u.getNome()));
 				row.add(new JsonPrimitive(u.getEndereco()));
 				row.add(new JsonPrimitive(u.getPais()));

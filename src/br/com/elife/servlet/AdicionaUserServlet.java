@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,8 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.elife.jdbc.dao.UserDao;
 import br.com.elife.jdbc.model.User;
 
+@WebServlet(name="addUser", urlPatterns={"/addUser"})
 public class AdicionaUserServlet extends HttpServlet {
-	
+
+	private static final long serialVersionUID = 3772892623649126079L;
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

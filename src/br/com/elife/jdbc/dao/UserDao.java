@@ -77,6 +77,21 @@ public class UserDao {
 	   
    }
    
+   public void deleta(Long id) {
+	   String sql = "delete from user where id=?";
+	   
+	   try {
+		   PreparedStatement stmt = connection.prepareStatement(sql);
+	       stmt.setLong(1, id);
+	 
+	       stmt.execute();
+	       stmt.close();
+	   } catch (SQLException e) {
+		   throw new RuntimeException(e);
+	   }
+	   
+   }
+   
    public List<User> listaUsers() {
 	     try {
 	         List<User> users = new ArrayList<User>();
