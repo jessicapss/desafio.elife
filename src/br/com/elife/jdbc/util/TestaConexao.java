@@ -1,4 +1,4 @@
-package br.com.elife.jdbc.teste;
+package br.com.elife.jdbc.util;
 
 import java.sql.Connection;
 import java.sql.SQLException;

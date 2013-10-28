@@ -42,7 +42,6 @@ public class AdicionaUserServlet extends HttpServlet {
             dataNascimento.setTime(date);
         } catch (ParseException e) {
         	
-        	//TODO
             out.println("Erro de convers‹o da data");
             return;
         }

@@ -1,4 +1,4 @@
-package br.com.elife.jdbc.teste;
+package br.com.elife.jdbc.util;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.util.Random;
 import br.com.elife.jdbc.dao.UserDao;
 import br.com.elife.jdbc.model.User;
 
-public class TestaInsere {
+public class InsereUsers {
 	
 	public static void main(String[] args) {
 		 User user = new User();

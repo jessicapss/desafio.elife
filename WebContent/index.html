@@ -3,6 +3,7 @@
     <head>
             <meta charset="UTF-8">
         <title>CRUD User</title>
+        <link href="media/themes/style.css" rel="stylesheet" type="text/css" />
         <link href="media/dataTables/demo_page.css" rel="stylesheet" type="text/css" />
         <link href="media/dataTables/demo_table.css" rel="stylesheet" type="text/css" />
         <link href="media/dataTables/demo_table_jui.css" rel="stylesheet" type="text/css" />
@@ -67,8 +68,8 @@
     <body id="dt_example">
         <div id="container">
             <div id="demo_jui">
-            <button id="btnAddNewRow" value="Ok">Add</button>
-            <button id="btnDelUser" value="cancel">Delete</button>
+            <button class="btn" id="btnAddNewRow" value="Ok">Add</button>
+            <button class="btn" id="btnDelUser" value="cancel">Delete</button>
         <table id="users" class="display">
               <thead>
                   <tr>
@@ -86,7 +87,7 @@
         </div>
         
         
-        <form id="formAddNewRow" action="#" title="Add new company">
+        <form id="formAddNewRow" action="#" title="Adicionar novo usuário">
 			    <input type="hidden" id="id" name="id" value="-1" rel="0" />
 			    <label for="name">Nome</label><input type="text" name="nome" id="nome" class="required" rel="1" />
 			    <br />
